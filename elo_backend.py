@@ -32,10 +32,10 @@ playerB_total = int(set1_scores[1]) + int(set2_scores[1]) + int(set3_scores[1])
 point_diff = playerB_total - playerA_total
 
 
-c = 0.07 # difference in points are max about 30%
-k = 30  #* (1 + c*math.log(1 + abs(point_diff)))
+c = 0.05 # difference in points are max about 30%
+k = 30  * (1 + c*math.log(1 + abs(point_diff)))
 
-expected_score = 1 / (1 + math.pow(10,((rB - rA)/200)))
+expected_score = 1 / (1 + math.pow(10,((rB - rA)/300)))
 
 if sets_played == 1 and sA == 1:
     sA = 2
@@ -49,8 +49,13 @@ def rA_change(sA, expected_score): # the elo change for Player A - can be negati
         performed_score = 1
     else:
         performed_score = 0
+    
+    elo_change = k * (performed_score - expected_score)
 
-    elo_change = round(k * (performed_score - expected_score))
+    if elo_change > 0:
+        elo_change = math.floor(elo_change)
+    else:
+        elo_change = math.ceil(elo_change)
 
     return elo_change
 
