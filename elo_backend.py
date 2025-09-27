@@ -37,12 +37,20 @@ def calculate_point_diff(set1_scores, set2_scores, set3_scores):
     point_diff = playerB_total - playerA_total
     return point_diff
 
-def calculate_k(sA, point_diff):
-    if sA == 2 and point_diff > 0: # if player A wins but overall player B gets more points, there shouldn't be any multiplier for dominancy
-        k = 30
+def calculate_k(sets, sA, point_diff):
+    if sets == 1:
+        if sA == 2 and point_diff > 0: # if player A wins but overall player B gets more points, there shouldn't be any multiplier for dominancy
+            k = 30
+        else:
+            c = 0.05 # difference in points are max about 30%
+            k = 30  * (1 + c*math.log(1 + abs(point_diff)))
     else:
-        c = 0.05 # difference in points are max about 30%
-        k = 30  * (1 + c*math.log(1 + abs(point_diff)))
+        if sA == 2 and point_diff > 0: # if player A wins but overall player B gets more points, there shouldn't be any multiplier for dominancy
+            k = 34
+        else:
+            c = 0.05 # difference in points are max about 30%
+            k = 34  * (1 + c*math.log(1 + abs(point_diff)))
+
 
     return k
 
@@ -65,7 +73,7 @@ def update_player_elo(a_ELO, b_ELO, no_of_sets_played, set1, set2, set3):
     expected_score = calc_expected_score(a_ELO, b_ELO)
     sA, set1_scores, set2_scores, set3_scores, error = calc_sets_won_by_A(no_of_sets_played, set1, set2, set3)
     point_difference = calculate_point_diff(set1_scores, set2_scores, set3_scores)
-    k = calculate_k(sA, point_difference)
+    k = calculate_k(no_of_sets_played, sA, point_difference)
     change_in_elo = rA_change(sA, expected_score, k)
     player_A_new_elo = a_ELO + change_in_elo
     player_B_new_elo = b_ELO - change_in_elo
