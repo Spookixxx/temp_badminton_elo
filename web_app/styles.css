@@ -1,0 +1,44 @@
+.title-style {
+    text-align: center;
+    display: block;
+    width: 100%;   
+    padding-top: 50px;
+}
+
+.body-style{
+    padding: 5px;
+    background-color: darkorange;
+    color: white;
+}
+
+.nav-bar ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+    padding-right: 10px;
+}
+
+.nav-bar a{
+    -webkit-transition: color 0.5s;
+    -moz-transition:    color 0.5s;
+    -ms-transition:     color 0.5s;
+    -o-transition:      color 0.5s;
+    transition:         color 0.5s;
+
+    font-size: 30px;
+    color: white;
+    text-decoration: solid;
+    padding: 15px;
+    display: block;
+    text-align: center;
+}
+
+.nav-bar a:hover{
+    color: black;
+}
+
+.nav-bar li {
+    float: right;
+    border-bottom: 2px solid black;
+    list-style: none;
+}
