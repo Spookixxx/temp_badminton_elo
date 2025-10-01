@@ -40,10 +40,10 @@ def calculate_point_diff(set1_scores, set2_scores, set3_scores):
 def calculate_k(sets, sA, point_diff):
     if sets == 1:
         if sA == 2 and point_diff > 0: # if player A wins but overall player B gets more points, there shouldn't be any multiplier for dominancy
-            k = 30
+            k = 28
         else:
             c = 0.065 # difference in points are max about 30%
-            k = 30  * (1 + c*math.log(1 + abs(point_diff)))
+            k = 28  * (1 + c*math.log(1 + abs(point_diff)))
     else:
         if sA == 2 and point_diff > 0: # if player A wins but overall player B gets more points, there shouldn't be any multiplier for dominancy
             k = 34
