@@ -1,55 +1,119 @@
-.center {
-    text-align: center;
-    display: block;
-    width: 100%;   
-}
-
-.body-style{    
-    background-color:#00539C;
+/* General Body style */
+.body-style {    
+    background-color: #00539C;
     color: white;
+    font-family: sans-serif;
     margin: 0;
     padding: 0;
 }
 
+.center {
+    text-align: center;
+}
+
+/* Navigation Bar Styles */
 .nav-bar ul {
     display: flex;
     justify-content: flex-end;
     list-style: none;
     margin: 0;
-    padding:0.4% 0.6% 1% 0;
+    padding: 0.4% 0.6% 1% 0;
     background-color: gray;
+    border-bottom: 0.3rem solid #FDB813;
 }
 
-
-.nav-bar a{
+.nav-bar a {
     -webkit-transition: color 0.5s;
     -moz-transition:    color 0.5s;
     -ms-transition:     color 0.5s;
     -o-transition:      color 0.5s;
     transition:         color 0.5s;
 
-    font-size: 1.5em;
+    font-size: 1.4em;
     color: white;
     text-decoration: none;
-    padding: 15px;
+    padding: 0.7rem;
     display: block;
     text-align: center;
 }
 
-.nav-bar a:hover{
+.nav-bar a:hover {
     color: black;
 }
 
 .nav-bar li {
-    border-bottom: 2px solid black;
+    border-bottom: 0.15rem solid black;
     list-style: none;
 }
 
-.image-background-logo{
-    width:100%;
+/* Logo and Welcome Text Container */
+.logo-container {
+    position: relative;
+    width: 100%;
+    padding-top: 2rem;
 }
 
-.move-left{
-    margin-left:40%;
-    padding-bottom:20%;
+.home-logo-style {
+    max-width: 25rem; 
+    width: 60%;
+    height: auto;
+}
+
+.welcome-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -1.5rem;
+    
+    width: 100%;
+    font-size: 2em;
+    margin: 0;
+}
+
+.tinted-box {
+    background-color:#009c8752;
+    border: 0.47rem solid #FDB813;
+    border-radius: 7px;
+    padding: 1.5rem;
+
+    max-width: 50rem;
+    height: 20rem;
+
+    margin: 3rem auto
+}
+
+.tinted-box h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #0f0f0f;
+    font-size: 2rem;
+}
+
+.tinted-box p {
+    margin-bottom: 0;
+    color: #f0f0f0;
+    line-height: 1.4;
+    font-size: 1.5rem;
+}
+
+/* Media query for smaller screens to adjust font size */
+@media (max-width: 768px) {
+    .welcome-text {
+        font-size: 1.5em; /* Make text a bit smaller on mobile */
+        bottom: -1rem;
+    }
+
+    .tinted-box {
+        padding: 1.5rem;
+        max-width: 30rem;   
+        min-height: auto;
+    }
+
+    .tinted-box h3 {
+        font-size: 2rem;
+    }
+
+    .tinted-box p {
+        font-size: 1.25rem;
+    }
 }
