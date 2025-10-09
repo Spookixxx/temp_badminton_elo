@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 .body-style {
     background-color: #00539C;
     color: white;
@@ -9,6 +15,12 @@
 
 .center {
     text-align: center;
+}
+
+.side-border {
+    border-left: 0.3rem solid #FDB813;
+    border-right: 0.3rem solid #FDB813;
+
 }
 
 /* Nav-bar */
@@ -165,6 +177,8 @@
 .center-item {
     order: -1; 
 }
+
+/* Borders ??? */
 
 
 /* For smaller screens */
