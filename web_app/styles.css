@@ -1,17 +1,18 @@
-/* General Body style */
-.body-style {    
+.body-style {
     background-color: #00539C;
     color: white;
     font-family: sans-serif;
     margin: 0;
     padding: 0;
+    min-width: 200px;
 }
 
 .center {
     text-align: center;
 }
 
-/* Navigation Bar Styles */
+/* Nav-bar */
+
 .nav-bar ul {
     display: flex;
     justify-content: flex-end;
@@ -23,12 +24,7 @@
 }
 
 .nav-bar a {
-    -webkit-transition: color 0.5s;
-    -moz-transition:    color 0.5s;
-    -ms-transition:     color 0.5s;
-    -o-transition:      color 0.5s;
-    transition:         color 0.5s;
-
+    transition: color 0.5s;
     font-size: 1.4em;
     color: white;
     text-decoration: none;
@@ -46,40 +42,39 @@
     list-style: none;
 }
 
-/* Logo and Welcome Text Container */
+/* Dropshot Logo */
+
 .logo-container {
-    position: relative;
     width: 100%;
     padding-top: 2rem;
 }
 
 .home-logo-style {
-    max-width: 25rem; 
+    max-width: 25rem;
     width: 60%;
     height: auto;
 }
 
 .welcome-text {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -1.5rem;
-    
     width: 100%;
     font-size: 2em;
     margin: 0;
+    margin-top: 1rem;
+    padding-bottom: 1rem;
 }
 
+/* Purpose Box */
+
 .tinted-box {
-    background-color:#009c8752;
+    background-color: #009c8752;
     border: 0.47rem solid #FDB813;
     border-radius: 7px;
     padding: 1.5rem;
 
+    width: 80%;
     max-width: 50rem;
-    height: 20rem;
-
-    margin: 3rem auto
+    min-height: 20rem;
+    margin: 3rem auto;
 }
 
 .tinted-box h3 {
@@ -96,17 +91,92 @@
     font-size: 1.5rem;
 }
 
-/* Media query for smaller screens to adjust font size */
+/* Block that shows available venues */
+
+.venue-block {
+    border-block: 0.6rem solid #FDB813;
+    background-color: aliceblue;
+    padding: 1.5rem 0 1.5rem 0;
+    text-align: center;
+}
+
+.venue-block > div {
+    display: inline-block;
+    vertical-align: top;
+    width: 200px;
+    margin: 1rem;
+}
+
+.venue-block h3 {
+    text-align: center;
+    color:#0f0f0f;
+    margin-top: 0;
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+}
+
+.venue-block-img-container {
+    display: inline-block;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 3rem;
+    line-height: 0;
+}
+
+.venue-block img {
+   max-width: 100%;
+   height: auto;
+}
+
+.venue-block p {
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    margin-top: 1rem;
+}
+
+.venue-block ul {
+    list-style: none;
+    margin: 1rem 0 0 0;
+    padding: 0;
+}
+
+.venue-block li {
+    list-style: none;
+    padding-bottom: 0.7rem;
+}
+
+.venue-block a {
+    transition: background-color 0.3s;
+    font-size: 1.1em;
+    color: white;
+    background-color: #00539C;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.venue-block a:hover {
+    background-color: #003f7a;
+}
+
+.center-item {
+    order: -1; 
+}
+
+
+/* For smaller screens */
+
 @media (max-width: 768px) {
     .welcome-text {
-        font-size: 1.5em; /* Make text a bit smaller on mobile */
-        bottom: -1rem;
+        font-size: 1.5em;
     }
 
     .tinted-box {
         padding: 1.5rem;
-        max-width: 30rem;   
-        min-height: auto;
+        min-height: 0;
     }
 
     .tinted-box h3 {
