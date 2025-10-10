@@ -139,6 +139,7 @@
 .venue-block img {
    max-width: 100%;
    height: auto;
+   border-radius: 2rem;
 }
 
 .venue-block p {
@@ -178,8 +179,41 @@
     order: -1; 
 }
 
-/* Borders ??? */
+/* Socials Bar */
 
+.socials-bar ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin: 0;
+    padding: 0.4% 0.8% 0.2% 0;
+    background-color: gray;
+    border-top: 0.5rem solid #FDB813;
+    border-bottom: 0.4rem solid #FDB813;
+}
+
+.socials-bar a {
+    transition: opacity 0.5s;
+    font-size: 1.4em;
+    opacity: 50%;
+    text-decoration: none;
+    padding: 0.7rem;
+    display: block;
+    text-align: center;
+}
+
+.socials-bar a:hover {
+    opacity: 100%;;
+}
+
+.socials-bar li {
+    list-style: none;
+}
+
+.socials-bar img {
+    max-width: 100%;
+    width: 2rem;
+}
 
 /* For smaller screens */
 
